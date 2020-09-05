@@ -66,7 +66,7 @@ public class Main {
 			//	String nome = rs.getString("nome");
 			//	String depart = rs.getString("case");
 			//	String cpf = rs.getString("cpf");
-			//	double salario = rs.getDouble("salario");
+			//  java.math.BigDecimal salario = rs.getBigDecimal("salario");
 					
 			//	System.out.println("Departamento: " + depart + " - Nome: " + nome + " | CPF: " + cpf);
 			//	System.out.println("Salário: R$ " + salario + "\n");
@@ -76,14 +76,14 @@ public class Main {
 				String nome = rs.getString("nome");
 				String cpf = rs.getString("cpf");
 				char sexo = rs.getString("sexo").charAt(0);
-				double salario = rs.getDouble("salario");
+				java.math.BigDecimal salario = rs.getBigDecimal("salario");
 				
 				System.out.println("Nome: " + nome + " - Sexo: " + sexo + " | CPF: " + cpf);
 				System.out.println("Salário: R$ " + salario + "\n");
 			}
 			
 			
-			
+			rs.close();
 			con.fecharConexao();
 		} catch (Exception e) {
 			e.printStackTrace();
