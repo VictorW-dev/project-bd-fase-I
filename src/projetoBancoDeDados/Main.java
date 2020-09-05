@@ -8,7 +8,8 @@ public class Main {
 		
 		Conexao con = new Conexao();
 		SQL sql = new SQL();
-		ResultSet rs = con.executaBusca(sql.consultarVisao());
+		ResultSet rs; 
+		//rs = con.executaBusca(sql.consultarVisao());
 		//rs = con.executaBusca(sql.consultaComNULL());
 		//rs = con.executaBusca(sql.consultaAninhadaIN());
 		//rs = con.executaBusca(sql.consultaAninhadaExists());
