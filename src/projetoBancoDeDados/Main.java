@@ -10,6 +10,12 @@ public class Main {
 		SQL sql = new SQL();
 		ResultSet rs = con.executaBusca(sql.consultarVisao());
 		//rs = con.executaBusca(sql.consultaComNULL());
+		//rs = con.executaBusca(sql.consultaAninhadaIN());
+		//rs = con.executaBusca(sql.consultaAninhadaExists());
+		//rs = con.executaBusca(sql.consultaOperadoresConjunto());
+		//rs = con.executaBusca(sql.consultaQuantificadores());
+		//rs = con.executaBusca(sql.consultaCase());
+		rs = con.executaBusca(sql.consultaWith());
 		
 		try {
 			//con.executaSQL(sql.criaVisao());
@@ -30,6 +36,52 @@ public class Main {
 				
 			//	System.out.println("Nome(s): " + nome);
 			//}
+			//while (rs.next()) {
+			//	String nome = rs.getString("nome");
+			//	String cpf = rs.getString("cpf");
+				
+			//	System.out.println("Nome: " + nome);
+			//	System.out.println("CPF: " + cpf);
+			//}
+			//while (rs.next()) {
+			//	String nome = rs.getString("nome");
+				
+			//	System.out.println("Nome: " + nome);
+			//}
+			//while (rs.next()) {
+			//	String nome = rs.getString("nome");
+			//	String cpf = rs.getString("cpf");
+				
+			//	System.out.println("Nome: " + nome);
+			//	System.out.println("CPF: " + cpf + "\n");
+			//}
+			//while (rs.next()) {
+			//	String nome = rs.getString("nome");
+			//	String cpf = rs.getString("cpf");
+					
+			//	System.out.println("Nome: " + nome);
+			//	System.out.println("CPF: " + cpf + "\n");
+			//}
+			//while (rs.next()) {
+			//	String nome = rs.getString("nome");
+			//	String depart = rs.getString("case");
+			//	String cpf = rs.getString("cpf");
+			//	double salario = rs.getDouble("salario");
+					
+			//	System.out.println("Departamento: " + depart + " - Nome: " + nome + " | CPF: " + cpf);
+			//	System.out.println("Salário: R$ " + salario + "\n");
+
+			//}
+			while (rs.next()) {
+				String nome = rs.getString("nome");
+				String cpf = rs.getString("cpf");
+				char sexo = rs.getString("sexo").charAt(0);
+				double salario = rs.getDouble("salario");
+				
+				System.out.println("Nome: " + nome + " - Sexo: " + sexo + " | CPF: " + cpf);
+				System.out.println("Salário: R$ " + salario + "\n");
+			}
+			
 			
 			
 			con.fecharConexao();

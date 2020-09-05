@@ -95,4 +95,50 @@ public class SQL {
 		return "SELECT Nome FROM Funcionario WHERE id_departamento IS NULL";
 	}
 	
+	protected String consultaAninhadaIN() {
+		return "SELECT f.nome, f.cpf FROM funcionario f "
+				+ "WHERE f.cpf  in "
+				+ "(SELECT cpf_funcionario FROM dependente "
+				+ "WHERE  cpf_funcionario  = f.cpf And "
+				+ "sexo = 'M')";
+	}
+	
+	protected String consultaAninhadaExists() {
+		return "SELECT f.nome FROM funcionario f "
+				+ "WHERE EXISTS (SELECT nome FROM dependente "
+				+ "WHERE f.cpf  = cpf_funcionario and sexo = 'F' GROUP BY nome)";
+	}
+	
+	protected String consultaOperadoresConjunto() {
+		return "SELECT nome, cpf FROM funcionario f "
+				+ "WHERE  NOT EXISTS (( SELECT id FROM departamento "
+				+ "WHERE cpf_gerente = '33344555587') "
+				+ "EXCEPT ( SELECT id FROM departamento d "
+				+ "WHERE d.cpf_gerente = '33344555587'))";
+	}
+	
+	protected String consultaQuantificadores() {
+		return "SELECT nome, cpf FROM funcionario "
+				+ "WHERE salario < ANY "
+				+ "(SELECT salario FROM funcionario)";
+	}
+	
+	protected String consultaWith() {
+		return "With CTE AS " + 
+				"(Select " + 
+				"nome, cpf, sexo, salario " + 
+				"FROM Funcionario ) " + 
+				"Select * From CTE";
+	}
+	
+	protected String consultaCase() {
+		return "SELECT nome, "
+				+ "CASE "
+				+ "WHEN id_departamento = 1 THEN 'Desenvolvimento' "
+				+ "WHEN id_departamento = 2 THEN 'Marketing' "
+				+ "WHEN id_departamento IS NULL THEN 'Sem Departamento' "
+				+ "END, cpf, salario "
+				+ "FROM Funcionario";
+	}
+	
 }
