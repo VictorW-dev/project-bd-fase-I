@@ -23,20 +23,33 @@ public class Main {
 			//con.executaSQL(sql.criaVisaoDois());
 			//con.executaSQL(sql.criaVisaoTres());
 			//con.executaSQL(sql.deletaVisao());
+			
+			// CONSULTAR VISÃO
+			
 			//while (rs.next()) {
 			//	String nome = rs.getString("nome");
 				
 			//	System.out.println("Nome: " + nome);
 			//}
+			
 			//con.executaSQL(sql.inserirNaVisao());
+			
 			//con.executaSQL(sql.atualizarVisao());
+			
 			//con.executaSQL(sql.inserirSQLPersonalizado());
+			
 			//con.executaSQL(sql.deletarDaVisao());
+			
+			// CONSULTA COM NULL
+			
 			//while (rs.next()) {
 			//	String nome = rs.getString("nome");
 				
 			//	System.out.println("Nome(s): " + nome);
 			//}
+			
+			// CONSULTA ANINHANDA IN
+			
 			//while (rs.next()) {
 			//	String nome = rs.getString("nome");
 			//	String cpf = rs.getString("cpf");
@@ -44,11 +57,17 @@ public class Main {
 			//	System.out.println("Nome: " + nome);
 			//	System.out.println("CPF: " + cpf);
 			//}
+			
+			// CONSULTA ANINHADA EXISTS
+			
 			//while (rs.next()) {
 			//	String nome = rs.getString("nome");
 				
 			//	System.out.println("Nome: " + nome);
 			//}
+			
+			// CONSULTA COM OPERADORES DE CONJUNTO
+			
 			//while (rs.next()) {
 			//	String nome = rs.getString("nome");
 			//	String cpf = rs.getString("cpf");
@@ -56,6 +75,9 @@ public class Main {
 			//	System.out.println("Nome: " + nome);
 			//	System.out.println("CPF: " + cpf + "\n");
 			//}
+			
+			// CONSULTA COM QUANTIFICADORES
+			
 			//while (rs.next()) {
 			//	String nome = rs.getString("nome");
 			//	String cpf = rs.getString("cpf");
@@ -63,16 +85,22 @@ public class Main {
 			//	System.out.println("Nome: " + nome);
 			//	System.out.println("CPF: " + cpf + "\n");
 			//}
+			
+			// CONSULTA COM CASE
+			
 			//while (rs.next()) {
 			//	String nome = rs.getString("nome");
 			//	String depart = rs.getString("case");
 			//	String cpf = rs.getString("cpf");
-			//  java.math.BigDecimal salario = rs.getBigDecimal("salario");
+			 // java.math.BigDecimal salario = rs.getBigDecimal("salario");
 					
 			//	System.out.println("Departamento: " + depart + " - Nome: " + nome + " | CPF: " + cpf);
 			//	System.out.println("Salário: R$ " + salario + "\n");
 
 			//}
+			
+			// CONSULTA COM WITH
+			
 			while (rs.next()) {
 				String nome = rs.getString("nome");
 				String cpf = rs.getString("cpf");
